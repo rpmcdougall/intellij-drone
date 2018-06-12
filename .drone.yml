@@ -1,0 +1,5 @@
+pipeline:
+  test:
+    image: openjdk:slim
+    commands:
+      - ./gradlew check
