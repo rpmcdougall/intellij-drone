@@ -1,5 +1,7 @@
 pipeline:
   test:
+    when:
+      event: push
     image: openjdk:slim
     commands:
       - ./gradlew check
