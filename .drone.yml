@@ -6,3 +6,5 @@ pipeline:
     image: openjdk:slim
     commands:
       - ./gradlew check
+    volumes:
+      - /opt/drone-cahce:/root
