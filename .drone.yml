@@ -1,7 +1,8 @@
 pipeline:
   test:
     when:
-      event: push
+      event: pull_request
+      branch: master
     image: openjdk:slim
     commands:
       - ./gradlew check
