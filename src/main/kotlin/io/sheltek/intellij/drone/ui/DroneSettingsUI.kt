@@ -13,7 +13,8 @@ import javax.swing.JComponent
 import javax.swing.JTextField
 
 class DroneSettingsUI: Configurable {
-    class TextListener : ActionListener{
+
+    class TextListener : ActionListener {
         var handMeDown: Boolean = false
         override fun actionPerformed(e: ActionEvent?) {
             handMeDown = true
@@ -67,13 +68,14 @@ class DroneSettingsUI: Configurable {
         }
         
         return panel {
+
             row {
-                label("Drone URL:")
-                droneUrl(CCFlags.grow)
+                label("Drone URL:   ")
+                droneUrl()
             }
             row {
                 label("Drone Token:")
-                droneToken(CCFlags.grow)
+                droneToken()
             }
         }
     }
