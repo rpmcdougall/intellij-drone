@@ -1,7 +1,10 @@
 build/
-.idea/
+.idea
 .gradle/
-build/
-
+*.iml
+*.zip
+*.tar
+*.jar
+*.class
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
