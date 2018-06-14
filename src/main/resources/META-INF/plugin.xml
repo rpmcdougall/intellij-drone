@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>io.sheltek.intellij.drone</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>Drone</name>
+    <vendor email="michael@sheltek.io" url="http://www.github.com/sheltekio">ShelTekIO</vendor>
 
     <description><![CDATA[
     Enter short description for your plugin here.<br>
@@ -16,6 +16,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <applicationConfigurable instance="io.sheltek.intellij.drone.ui.DroneSettingsUI"
+                                 displayName="Drone" groupId="build" />
     </extensions>
 
     <actions>
