@@ -30,13 +30,20 @@ class DroneSettingsUI: Configurable {
     var state: DroneSettings = DroneSettings()
 
     override fun isModified(): Boolean {
-        return (!(droneToken.text == PropertiesComponent.getInstance().getValue("drone_token")) && (droneUrl.text == PropertiesComponent.getInstance().getValue("drone_url")))
+            return !((droneToken.text == PropertiesComponent.getInstance().getValue("drone_token",""))
+                    && (droneUrl.text == PropertiesComponent.getInstance().getValue("drone_url","")))
+
     }
 
     override fun getDisplayName(): String {
         return DronePlugin.name
     }
 
+    override fun reset() {
+        this.droneToken.text = PropertiesComponent.getInstance().getValue("drone_token","")
+        this.droneUrl.text = PropertiesComponent.getInstance().getValue("drone_url","")
+    }
+    
     override fun apply() {
         try {
             PropertiesComponent.getInstance().setValue("drone_token",droneToken.text)
