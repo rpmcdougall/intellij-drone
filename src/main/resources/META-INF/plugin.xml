@@ -18,6 +18,7 @@
         <!-- Add your extensions here -->
         <applicationConfigurable instance="io.sheltek.intellij.drone.ui.DroneSettingsUI"
                                  displayName="Drone" groupId="build" />
+        <toolWindow id="Drone" anchor="right" factoryClass="io.sheltek.intellij.drone.ui.DroneToolWindowFactory" />
     </extensions>
 
     <actions>

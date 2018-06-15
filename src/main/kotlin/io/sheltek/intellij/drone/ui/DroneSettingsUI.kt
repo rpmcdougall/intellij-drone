@@ -1,16 +1,13 @@
 package io.sheltek.intellij.drone.ui
 
-import com.intellij.ide.util.PropertiesComponent
-import com.intellij.openapi.diagnostic.logger
 import com.intellij.openapi.options.Configurable
-import com.intellij.ui.layout.CCFlags
 import com.intellij.ui.layout.panel
 import io.sheltek.intellij.drone.DronePlugin
-import io.sheltek.intellij.drone.settings.DroneSettings
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
+import io.sheltek.intellij.drone.controller.DroneClient
 import javax.swing.JComponent
 import javax.swing.JTextField
+import io.sheltek.intellij.drone.utils.IntelliJUtiliteis.Companion.getProperty
+import io.sheltek.intellij.drone.utils.IntelliJUtiliteis.Companion.setProperty
 
 class DroneSettingsUI: Configurable {
 
@@ -36,6 +33,8 @@ class DroneSettingsUI: Configurable {
     override fun apply() {
         setProperty("drone_token", droneToken.text)
         setProperty("drone_url", droneUrl.text)
+        var c : DroneClient = DroneClient()
+        c.userRepos()
     }
 
     override fun createComponent(): JComponent? {
@@ -55,9 +54,4 @@ class DroneSettingsUI: Configurable {
         }
     }
 
-    private fun getProperty(key : String, default : String) : String
-        = PropertiesComponent.getInstance().getValue(key, default)
-
-    private fun setProperty(key : String, value : String)
-        = PropertiesComponent.getInstance().setValue(key, value)
 }
